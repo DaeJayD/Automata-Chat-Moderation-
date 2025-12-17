@@ -6,7 +6,7 @@
 ToxicityAnalyzer::ToxicityAnalyzer() 
     : toxic_nfa(std::move(RegexToNFA::from_regex("idiot|stupid|ugly|dumb"))),
       bracket_pda(BracketPDA::create_balanced_bracket_pda()),
-      formatting_pda(BracketPDA::create_formatting_pda()) {
+      formatting_pda() {  // Changed to default constructor
 }
 
 ToxicityAnalyzer::AnalysisResult ToxicityAnalyzer::analyze_message(const std::string& message) {
@@ -17,7 +17,7 @@ ToxicityAnalyzer::AnalysisResult ToxicityAnalyzer::analyze_message(const std::st
     result.exact_matches = find_exact_matches(message);
     result.toxicity_score += result.exact_matches.size() * 30;
 
-    result.approx_matches = approx_matcher.find_matches(message, 1);
+    result.approx_matches = approx_matcher.find_matches(message, ".*", 1);
     result.toxicity_score += result.approx_matches.size() * 20;
 
     result.valid_structure = validate_structures(message);
@@ -36,7 +36,9 @@ std::vector<std::string> ToxicityAnalyzer::find_exact_matches(const std::string&
     std::istringstream ss(message);
     std::string word;
 
-    std::vector<std::string> toxic_words = {"idiot", "stupid", "ugly", "dumb", "hate", "fuck"};
+    std::vector<std::string>toxic_words = {
+    "idiot","stupid","dumb","trash"};
+
 
     while (ss >> word) {
         word.erase(std::remove_if(word.begin(), word.end(), 

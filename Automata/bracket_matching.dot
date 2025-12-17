@@ -1,0 +1,48 @@
+digraph BracketMatching {
+    rankdir=TB;
+    node [shape=none];
+    edge [arrowhead=none];
+
+    // Input string characters
+    char0 [label="(", shape=box, style=filled, fillcolor=lightblue];
+    char1 [label="*"];
+    char2 [label="*"];
+    char3 [label="b"];
+    char4 [label="@"];
+    char5 [label="d"];
+    char6 [label="*"];
+    char7 [label="*"];
+    char8 [label=")", shape=box, style=filled, fillcolor=lightblue];
+    char9 [label=" "];
+    char10 [label="(", shape=box, style=filled, fillcolor=lightblue];
+    char11 [label="h"];
+    char12 [label="a"];
+    char13 [label="t"];
+    char14 [label="e"];
+    char15 [label=")", shape=box, style=filled, fillcolor=lightblue];
+    char16 [label=" "];
+    char17 [label="(", shape=box, style=filled, fillcolor=lightblue];
+    char18 [label="b"];
+    char19 [label="a"];
+    char20 [label="d"];
+    char21 [label=")", shape=box, style=filled, fillcolor=lightblue];
+
+    // Horizontal arrangement
+    { rank=same; char0 -> char1 -> char2 -> char3 -> char4 -> char5 -> char6 -> char7 -> char8 -> char9 -> char10 -> char11 -> char12 -> char13 -> char14 -> char15 -> char16 -> char17 -> char18 -> char19 -> char20 -> char21 [style=invis]; }
+
+    // Bracket connections
+    char0 -> char8 [color=red, penwidth=2, constraint=false, label="bad"];
+    char10 -> char15 [color=red, penwidth=2, constraint=false, label="hate"];
+    char17 -> char21 [color=red, penwidth=2, constraint=false, label="bad"];
+
+    // Legend
+    subgraph cluster_legend {
+        label="Legend";
+        style=filled;
+        fillcolor=lightyellow;
+        node [shape=plaintext];
+        clean [label="Clean bracket pair", color=green, fontcolor=green];
+        toxic [label="Toxic bracket pair", color=red, fontcolor=red];
+        clean -> toxic [style=invis];
+    }
+}

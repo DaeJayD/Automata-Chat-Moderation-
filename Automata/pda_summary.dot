@@ -1,0 +1,17 @@
+digraph PDASummary {
+    rankdir=TB;
+    node [shape=box, style=rounded];
+    labelloc="t";
+    label="PDA Patterns Summary\nFound 3 bracket pairs\n3 toxic, 0 clean";
+
+    start [shape=point];
+    patterns [label="Detected Patterns", shape=oval, fillcolor=lightblue, style=filled];
+    start -> patterns;
+
+    pattern1 [label="(bad)\nToxic: bad", fillcolor=pink, style=filled];
+    patterns -> pattern1;
+    pattern2 [label="(hate)\nToxic: hate", fillcolor=pink, style=filled];
+    patterns -> pattern2;
+    pattern3 [label="(**b@d**)\nToxic: bad", fillcolor=pink, style=filled];
+    patterns -> pattern3;
+}

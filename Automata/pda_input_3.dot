@@ -1,0 +1,35 @@
+digraph PDA {
+    rankdir=LR;
+    node [shape=circle, style=filled, color=lightblue];
+    labelloc="t";
+    label="Pattern: (**b@d**)\n(Toxic: bad)";
+
+    q0; q1; q2; q3; q4; q5; q6; q7;
+    qAccept [shape=doublecircle, color=pink];
+
+    start [shape=point];
+    start -> q0;
+
+    // Read "(" push "(" onto stack
+    q0 -> q1 [label="( , Z / (Z"];
+    q0 -> q1 [label="( , ( / (("];
+
+    // Match '*'
+    q1 -> q2 [label="* , ( / ("];
+    // Match '*'
+    q2 -> q3 [label="* , ( / ("];
+    // Match 'b'
+    q3 -> q4 [label="b , ( / ("];
+    // Match '@'
+    q4 -> q5 [label="@ , ( / ("];
+    // Match 'd'
+    q5 -> q6 [label="d , ( / ("];
+    // Match '*'
+    q6 -> q7 [label="* , ( / ("];
+    // Match '*'
+    q7 -> q8 [label="* , ( / ("];
+
+    // Accept only the closing bracket ")"
+    // Pop "(" from stack
+    q8 -> qAccept [label=") , ( / ε"];
+}

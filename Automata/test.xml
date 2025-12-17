@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chat_log>
+    <message>
+        <user>User123</user>
+        <timestamp>2024-01-15 10:30:00</timestamp>
+        <text>Hello everyone, how are you doing today?</text>
+    </message>
+    
+    <message>
+        <user>ToxicUser</user>
+        <timestamp>2024-01-15 10:31:15</timestamp>
+        <text>You're all a bunch of idiots!</text>
+    </message>
+    
+    <message>
+        <user>DisguisedUser</user>
+        <timestamp>2024-01-15 10:32:30</timestamp>
+        <text>I think you're all st00pid and should leave.</text>
+    </message>
+    
+    <message>
+        <user>AngryUser</user>
+        <timestamp>2024-01-15 10:33:45</timestamp>
+        <text>I f**king hate this place! Everyone here is dumb.</text>
+    </message>
+    
+    <message>
+        <user>CreativeUser</user>
+        <timestamp>2024-01-15 10:34:20</timestamp>
+        <text>This is (actually) a [nice] place to {chat}.</text>
+    </message>
+    
+    <message>
+        <user>BracketUser</user>
+        <timestamp>2024-01-15 10:35:10</timestamp>
+        <text>Let me (hate) on [stupid] people with {anger}!</text>
+    </message>
+    
+    <message>
+        <user>AnotherUser</user>
+        <timestamp>2024-01-15 10:36:00</timestamp>
+        <text>Why are you being so mean? Stop it!</text>
+    </message>
+    
+    <message>
+        <user>ModUser</user>
+        <timestamp>2024-01-15 10:37:00</timestamp>
+        <text>Please keep the chat respectful. No toxicity allowed.</text>
+    </message>
+    
+    <message>
+        <user>TestUser</user>
+        <timestamp>2024-01-15 10:38:15</timestamp>
+        <text>Testing brackets: (good) [bad] {evil} &lt;hate&gt;</text>
+    </message>
+    
+    <message>
+        <user>EdgeCaseUser</user>
+        <timestamp>2024-01-15 10:39:30</timestamp>
+        <text>What about these: idoit (typo), stpid (missing u), dum (missing b)</text>
+    </message>
+    
+    <message>
+        <user>NormalUser</user>
+        <timestamp>2024-01-15 10:40:00</timestamp>
+        <text>I think this is a wonderful community overall.</text>
+    </message>
+    
+    <message>
+        <user>MixedUser</user>
+        <timestamp>2024-01-15 10:41:20</timestamp>
+        <text>Great discussion! But some [idiots] ruin it with (hateful) comments.</text>
+    </message>
+    
+    <message>
+        <user>LastUser</user>
+        <timestamp>2024-01-15 10:42:00</timestamp>
+        <text>Goodbye everyone, have a nice day!</text>
+    </message>
+    
+    <!-- Special test cases -->
+    <message>
+        <user>PatternTest</user>
+        <timestamp>2024-01-15 10:43:00</timestamp>
+        <text>Testing patterns: bitch, ass, fuk, sh1t, mor0n</text>
+    </message>
+    
+    <message>
+        <user>BracketTest</user>
+        <timestamp>2024-01-15 10:44:00</timestamp>
+        <text>Nested (brackets [with {multiple} levels]) test</text>
+    </message>
+    
+    <message>
+        <user>CleanUser</user>
+        <timestamp>2024-01-15 10:45:00</timestamp>
+        <text>This message is completely clean and respectful.</text>
+    </message>
+</chat_log>

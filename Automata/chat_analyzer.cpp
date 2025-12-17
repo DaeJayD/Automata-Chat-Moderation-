@@ -51,7 +51,7 @@ void ChatLogAnalyzer::print_analysis_result(const ToxicityAnalyzer::AnalysisResu
     if (!result.approx_matches.empty()) {
         std::cout << "Approximate Matches: ";
         for (const auto& match : result.approx_matches) {
-            std::cout << YELLOW << match.original << " (-> " << match.matched_word 
+            std::cout << YELLOW << match.original << " (-> " << match.matched_pattern
                      << ", dist=" << match.distance << ")" << RESET << " ";
         }
         std::cout << "\n";

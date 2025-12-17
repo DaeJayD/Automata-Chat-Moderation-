@@ -1,0 +1,40 @@
+digraph PDA {
+  rankdir=LR;
+  node [shape=circle];
+  labelloc="t";
+  label="Pushdown Automaton (Context-Free)\nRecognizes balanced brackets with toxic word detection\nLanguage class: CONTEXT-FREE (requires stack)";
+  fontsize=12;
+  0 [label="q0\nStart/Scan", color="blue"];
+  1 [label="q1\nInside Brackets", color="blue"];
+  2 [label="q2\nToxic Detected", color="blue"];
+  3 [label="q3\nAccept", color="blue"];
+  4 [label="q4", shape=doublecircle, color="green"];
+  1 -> 1 [label="ε / $ → $", color="black"];
+  1 -> 2 [label="( / $ → $(", color="orange"];
+  1 -> 2 [label="[ / $ → $[", color="orange"];
+  1 -> 2 [label="{ / $ → ${", color="orange"];
+  1 -> 2 [label="< / $ → $<", color="orange"];
+  1 -> 4 [label="ε / $ → ", color="black"];
+  2 -> 2 [label="ε / $ → $", color="black"];
+  2 -> 1 [label=") / ( → ", color="red"];
+  2 -> 1 [label="] / [ → ", color="red"];
+  2 -> 1 [label="} / { → ", color="red"];
+  2 -> 1 [label="> / < → ", color="red"];
+  2 -> 3 [label="space / $ → $", color="purple"];
+  2 -> 2 [label="space / $ → $", color="purple"];
+  3 -> 2 [label="ε / $ → $", color="black"];
+  3 -> 4 [label="ε / $ → ", color="black"];
+  start [shape=point];
+  start -> 0;
+  subgraph cluster_legend {
+    label="PDA Transitions (Context-Free)";
+    style=filled;
+    color=lightgrey;
+    node [shape=rectangle];
+    legend1 [label="Red: Pop bracket"];
+    legend2 [label="Orange: Push bracket"];
+    legend3 [label="Purple: Word boundary"];
+    legend4 [label="Black: Scan characters"];
+    legend5 [label="Key: Uses STACK → Context-Free Language"];
+  }
+}

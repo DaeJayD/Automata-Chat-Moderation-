@@ -221,8 +221,7 @@ std::string NFA::toDotWithInput(const std::string& input) const {
         }
     }
 
-    // Draw transitions. Highlight transitions between visited states (approximation).
-    // (Exact per-character transition highlighting in NFAs is tricky; this highlights edges between visited states.)
+
     for (const auto& node_ptr : node_vec) {
         const NFANode* node = node_ptr.get();
         for (const auto& kv : node->transitions) {
